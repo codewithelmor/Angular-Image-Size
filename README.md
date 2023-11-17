@@ -1,5 +1,7 @@
 # AngularImageSize
 
+![2023-11-17 21-19-53](https://github.com/codewithelmor/Angular-Image-Size/assets/44918452/ebaf7209-be9f-45ce-bcff-541e0cf53fb0)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
 
 ## Development server

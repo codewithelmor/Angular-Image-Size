@@ -1,0 +1,15 @@
+<div class="container">
+  <form class="row row-cols-lg-auto g-3 pt-5 align-items-center needs-validation" [formGroup]="form" novalidate>
+      <div class="mb-3">
+          <label for="formFile" class="form-label">
+            Upload Image <span *ngIf="isRequiredField('image')">*</span>
+          </label>
+          <input class="form-control" type="file" id="formFile" accept="image/png, image/x-png" formControlName="image" [ngClass]="{'is-invalid': form.get('image')?.invalid && (form.get('image')?.dirty || form.get('image')?.touched) || invalidFormat || invalidWidth || invalidHeight, 'is-valid': form.get('image')?.valid && (form.get('image')?.dirty || form.get('image')?.touched) && !invalidFormat && !invalidWidth && !invalidHeight}" (change)="onFileSelected($event)">
+          <div class="valid-feedback" *ngIf="form.get('image')?.valid && (form.get('image')?.dirty || form.get('image')?.touched)">Valid image!</div>
+          <div class="invalid-feedback" *ngIf="invalidFormat">The field 'image' has invalid format. The width should be {{ imageRequirement.type }}.</div>
+          <div class="invalid-feedback" *ngIf="invalidWidth">The field 'image' has invalid width. The width should be {{ imageRequirement.width }}.</div>
+          <div class="invalid-feedback" *ngIf="invalidHeight">The field 'image' has invalid height. The width should be {{ imageRequirement.height }}.</div>
+          <div class="invalid-feedback" *ngIf="form.get('image')?.getError('required') && (form.get('image')?.dirty || form.get('image')?.touched)">The field 'image' is required.</div>
+      </div>
+  </form>
+</div>
